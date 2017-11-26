@@ -1,0 +1,120 @@
+<md-dialog aria-label="Mango (Fruit)" style="width: 70%;height:100%" data-background-color="purple">
+    {{name}}
+    <form ng-cloak>
+        <md-toolbar>
+        <div class="md-toolbar-tools">
+            <h2>Employee Details</h2>
+            <span flex></span>
+            <md-button class="md-icon-button" ng-click="cancel()">
+            <md-icon md-svg-src="img/icons/ic_close_24px.svg" aria-label="Close dialog"></md-icon>
+            </md-button>
+        </div>
+        </md-toolbar>
+
+        <md-dialog-content>
+            <div class="md-dialog-content">
+                <div class="row">
+                    <div class="col-md-3">
+                        <label class="control-label">Last Name</label>
+                        <p>{{employeeDetails.lname}}</p>
+                    </div>
+                    <div class="col-md-3">
+                        <label class="control-label">First Name</label>
+                        <p>{{employeeDetails.fname}}</p>    
+                    </div>
+                    <div class="col-md-3">
+                        <label class="control-label">Middle Name/Initials</label>
+                        <p>{{employeeDetails.mname}}</p>
+                    </div>
+                    <div class="col-md-3">
+                        <label class="control-label">Birth Date</label>
+                        <p>{{employeeDetails.birthDate}}</p>
+                    </div>
+                </div>
+
+                <br>
+                <h4>Employee Info</h4>
+                <hr>
+                <div class="row">
+                    <div class="col-md-3">
+                        <label class="control-label">Personnel No.</label>
+                        <p>{{employeeDetails.personnelNo}}</p>
+                    </div>
+
+                    <div class="col-md-3">
+                        <label class="control-label">Hire Date</label>
+                        <p>{{employeeDetails.hireDate}}</p>
+                    </div>
+                    <div class="col-md-3">
+                        <label class="control-label">Role</label>
+                        <p>{{employeeDetails.role}}</p>
+                    </div>
+                    <div class="col-md-3">
+                        <label class="control-label">Capability</label>
+                        <p>{{employeeDetails.capability}}</p>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-md-3">
+                        <label class="control-label">Career Level</label>
+                        <p>{{employeeDetails.level}}</p>
+                    </div>
+                </div>
+
+                <br>
+                <h4>Contact Details</h4>
+                <hr>
+                <div class="row">
+                    <div>
+                        <div class="col-md-3">
+                            <label class="control-label">Address</label>
+                            <p>{{employeeDetails.address}}</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-md-3">
+                        <label class="control-label">Personal Email</label>
+                        <p>{{employeeDetails.personalEmail}}</p>
+                    </div>
+                    <div class="col-md-3">
+                        <label class="control-label">Accenture Email</label>
+                        <p>{{employeeDetails.accentureEmail}}</p>
+                    </div>
+                    <div class="col-md-3">
+                        <label class="control-label">Personal Contact No</label>
+                        <p>{{employeeDetails.personalContactNo}}</p>
+                    </div>
+                </div>
+
+                <br>
+                <h4>Miscellaneous</h4>
+                <hr>
+                <div class="row">
+                    <div class="col-md-3">
+                        <label class="control-label">Approver</label>
+                        <p>{{employeeDetails.isApprover ? 'Yes' : 'No'}}</p>
+                    </div>
+                    <div class="col-md-3">
+                        <label class="control-label">Supervisor/Approver</label>
+                        <p>{{employeeDetails.approverName}}</p>
+                    </div>
+                    <div class="col-md-3">
+                        <label class="control-label">Team</label>
+                        <p>{{employeeDetails.teamName}}</p>
+                    </div>
+                </div>
+
+                <br>
+                <hr>
+                <div class="row">
+                    <button type="button" class="btn btn-primary pull-right" ng-click="edit()">Edit</button>
+                    <button type="button" class="btn btn-default pull-right" ng-click="close()">Close</button>
+                </div>
+            </div>
+        </md-dialog-content>
+
+    </form>
+</md-dialog>

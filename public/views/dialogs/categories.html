@@ -1,0 +1,16 @@
+<md-edit-dialog>
+	<div layout="column" class="md-content">
+		<p>SELECT CATEGORY</p>
+		<form novalidate name="editDialog" flex="150" layout="column" ng-submit="submit(selectedCategory)">		
+			<md-input-container>
+				<md-select ng-model="selectedCategory" placeholder="Select a category" style="font-size: 14px !important; min-width:185px;" >
+					<md-option ng-value="cat.$value" ng-repeat="cat in categoryList">{{ cat.$value }}</md-option>
+				</md-select>
+			</md-input-container>
+		</form>
+	</div>
+<div layout="row" layout-align="end" class="md-actions">
+    <md-button class="md-warn" ng-click="dismiss()">CANCEL</md-button>
+    <md-button class="md-primary" ng-click="submit()">SAVE</md-button>
+</div>
+</md-edit-dialog>

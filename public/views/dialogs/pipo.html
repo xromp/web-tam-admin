@@ -1,0 +1,17 @@
+<md-edit-dialog>
+    <div layout="column" class="md-content">
+    <p>SELECT PRIORITY</p>
+        <form name="editDialog" layout="column" ng-submit="submit(model)" novalidate>
+            <md-input-container md-no-float>                
+            	<md-radio-group ng-model="model">
+            		<md-radio-button value="0">P0</md-radio-button>
+            		<md-radio-button value="1">P1</md-radio-button>
+            	</md-radio-group>
+            </md-input-container>
+        </form>
+    </div>
+    <div layout="row" layout-align="end" class="md-actions">
+        <md-button class="md-warn" ng-click="dismiss()">CANCEL</md-button>
+        <md-button class="md-primary" ng-click="submit()">SAVE</md-button>
+    </div>
+</md-edit-dialog>

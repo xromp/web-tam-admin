@@ -1,0 +1,28 @@
+[debug] [2017-11-25T05:40:54.363Z] ----------------------------------------------------------------------
+[debug] [2017-11-25T05:40:54.365Z] Command:       /usr/local/bin/node /usr/local/bin/firebase serve
+[debug] [2017-11-25T05:40:54.365Z] CLI Version:   3.13.1
+[debug] [2017-11-25T05:40:54.365Z] Platform:      linux
+[debug] [2017-11-25T05:40:54.365Z] Node Version:  v8.2.1
+[debug] [2017-11-25T05:40:54.365Z] Time:          Sat Nov 25 2017 13:40:54 GMT+0800 (+08)
+[debug] [2017-11-25T05:40:54.365Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2017-11-25T05:40:54.373Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2017-11-25T05:40:54.373Z] > authorizing via signed-in user
+[debug] [2017-11-25T05:40:54.375Z] >>> HTTP REQUEST GET https://admin.firebase.com/v1/projects/onlinereservation-2lx  
+ Sat Nov 25 2017 13:40:54 GMT+0800 (+08)
+[debug] [2017-11-25T05:40:55.684Z] <<< HTTP RESPONSE 200
+[debug] [2017-11-25T05:40:55.685Z] >>> HTTP REQUEST GET https://admin.firebase.com/v1/database/onlinereservation-2lx/tokens  
+ Sat Nov 25 2017 13:40:55 GMT+0800 (+08)
+[debug] [2017-11-25T05:40:56.816Z] <<< HTTP RESPONSE 200
+[info] 
+[info] === Serving from '/usr/local/google/home/rommelp/innov/dps-pipo'...
+[info] 
+[debug] [2017-11-25T05:40:56.818Z] >>> HTTP REQUEST GET https://cloudresourcemanager.googleapis.com/v1/projects/onlinereservation-2lx  
+ Sat Nov 25 2017 13:40:56 GMT+0800 (+08)
+[debug] [2017-11-25T05:40:58.154Z] <<< HTTP RESPONSE 200
+[debug] [2017-11-25T05:40:58.154Z] >>> HTTP REQUEST GET https://mobilesdk-pa.googleapis.com/v1/projects/737586176541/clients/_:getWebAppConfig  
+ Sat Nov 25 2017 13:40:58 GMT+0800 (+08)
+[debug] [2017-11-25T05:40:59.193Z] <<< HTTP RESPONSE 200
+[info] i  hosting: Serving hosting files from: public
+[info] ✔  hosting: Local server: http://localhost:5000
+

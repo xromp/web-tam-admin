@@ -1,0 +1,84 @@
+<html lang="en">
+
+<head>
+  <title>DPS - PIPO</title>
+
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="description" content="">
+  <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no" />
+  <link rel='shortcut icon' href='assets/png/favicon.png' type='image/x-icon' />
+  <link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Roboto:400,500,700,400italic'>
+  <link rel="stylesheet" href="lib/angular-material/angular-material.min.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+  <link rel="stylesheet" href="lib/angular-material-data-table/dist/md-data-table.min.css" />
+  <link rel="stylesheet" href="assets/app.css" />
+
+  <link href="../assets/css/bootstrap.min.css" rel="stylesheet" />
+    <!--  Material Dashboard CSS    -->
+  <link href="../assets/css/material-dashboard.css" rel="stylesheet"/>
+  <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/angular_material/1.1.0/angular-material.min.css" rel="stylesheet">
+
+  <!--  CSS for Demo Purpose, don't include it in your project     -->
+  <link href="../assets/css/demo.css" rel="stylesheet" />
+
+  <!--     Fonts and icons     -->
+  <link href="https://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css" rel="stylesheet">
+  <link href='https://fonts.googleapis.com/css?family=Roboto:400,700,300|Material+Icons' rel='stylesheet' type='text/css'>
+  <base href="/">
+  <style type="text/css">
+    /**
+         * Hide when Angular is not yet loaded and initialized
+         */
+    
+    [ng\:cloak],
+    [ng-cloak],
+    [data-ng-cloak],
+    [x-ng-cloak],
+    .ng-cloak,
+    .x-ng-cloak {
+      display: none !important;
+    }
+  </style>
+
+</head>
+
+<body ng-app="dpsPipo" layout="column" ng-cloak>
+
+  <div ui-view flex layout-fill layout="row">
+  </div>
+
+  <!-- Angular Material requires Angular.js Libraries -->
+  <script type="text/javascript" src="lib/angular/angular.min.js"></script>
+  <script type="text/javascript" src="lib/angular-animate/angular-animate.min.js"></script>
+  <script type="text/javascript" src="lib/angular-aria/angular-aria.min.js"></script>
+  <script type="text/javascript" src="lib/angular-messages/angular-messages.min.js"></script>
+  <script type="text/javascript" src="lib/angular-ui-router/release/angular-ui-router.min.js"></script>
+  
+  <script type="text/javascript" src="lib/angular/angular-timer-bower.js"></script>
+  <script type="text/javascript" src="lib/angular/angular-timer-all.min.js"></script>
+  
+  <!-- Angular Material Library -->
+  <script type="text/javascript" src="lib/angular-material/angular-material.min.js"></script>
+
+  <script type="text/javascript" src="lib/angular-material-data-table/dist/md-data-table.min.js"></script>
+
+  <!-- Firebase -->
+  <!-- <script type="text/javascript" src="lib/firebase/firebase.js"></script> -->
+  <script src="https://www.gstatic.com/firebasejs/4.6.0/firebase.js"></script>
+
+  <!-- AngularFire -->
+  <script type="text/javascript" src="lib/angularfire/dist/angularfire.min.js"></script>
+
+  <!-- Angular CSV import -->
+  <script type="text/javascript" src="lib/papaparse/papaparse.min.js"></script>
+  
+
+  <script type="text/javascript" src="src/app.js"></script>
+  <script type="text/javascript" src="src/services.js"></script>
+  <script type="text/javascript" src="src/controllers.js"></script>
+  
+
+</body>
+
+</html>

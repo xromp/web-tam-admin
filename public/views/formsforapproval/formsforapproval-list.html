@@ -1,0 +1,57 @@
+<md-toolbar md-whiteframe="4" class="main-toolbar">
+        <div class="md-toolbar-tools" md-theme="toolbar-tools-purple">
+          <md-button class="md-icon-button" aria-label="Settings" ng-click="uc.toggleSideNav()">
+            <md-icon md-font-set="material-icons">menu</md-icon>
+          </md-button>
+          <span flex>PIPO</span>
+        </div>
+      </md-toolbar>
+        
+  <md-content layout="row" layout-md layout-padding layout-align="left start">    
+    <md-card>
+      <md-table-container>
+        <table md-table>
+          <thead md-head md-order="orderCriteria">
+            <tr md-row>
+              <th md-column>No.</th>
+              <th md-column md-order-by="name">Name</th>
+              <th md-column md-order-by="leaveType">Leave Type</th>
+              <th md-column md-order-by="role">Start Date Effectivity</th>
+              <th md-column md-order-by="role">End Date Effectivity</th>
+              <th md-column>Status/Action</th>
+            </tr>
+          </thead>
+          <tbody md-body ng-if="fc.forms.length">
+            <tr md-row ng-repeat="form in fc.forms" ng-class="{'alert alert-success':form.status == 'APPROVED', 'alert alert-danger':form.status == 'DECLINED'}">
+              <td md-cell ng-bind="$index+1"></td>
+              <td md-cell ng-bind="form.name"></td>
+              <td md-cell ng-bind="form.leavetype"></td>
+              <td md-cell ng-bind="form.startdate | date"></td>
+              <td md-cell ng-bind="form.enddate |  date"></td>
+              <td md-cell >
+                <div ng-show="form.status != 'PENDING'">
+                    {{form.status}}
+                </div>
+                <div ng-show="form.status == 'PENDING'">
+                    <button class="btn btn-success" ng-click="fc.action(form,'APPROVED')"><i class="material-icons">thumb_up</i> Approve</button>
+                    <button class="btn btn-danger" ng-click="fc.action(form,'DECLINED')"><i class="material-icons">thumb_down</i>Decline</button>    
+                </div>
+              </td>
+            </tr>
+          </tbody>
+          
+          <tbody md-body ng-if="!fc.forms.length">
+            <tr md-row>
+                <td md-cell colspan="5" style="text-align: center !important;">No Records</td>          
+            </tr>
+          </tbody> 
+            
+        </table>
+      </md-table-container>
+    
+      <md-table-pagination ng-if="hc.allcases.length" class="top" md-limit="hc.pageSize" md-limit-options="[5, 10, 30, 50]" md-page="hc.currentPage" md-total="{{hc.allcases.length}}"
+      md-page-select="true" md-boundary-links="true"></md-table-pagination>   	
+    
+  </md-card>
+</md-content>
+        

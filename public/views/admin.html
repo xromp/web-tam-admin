@@ -1,0 +1,35 @@
+<md-toolbar md-whiteframe="4" class="main-toolbar">
+  <div class="md-toolbar-tools" md-theme="toolbar-tools-purple">
+    <md-button class="md-icon-button" aria-label="Settings" ng-click="uc.toggleSideNav()">
+      <md-icon md-font-set="material-icons">menu</md-icon>
+    </md-button>
+    <span flex>MANAGE ADMIN</span>
+  </div>
+</md-toolbar>
+
+<md-content layout="row" layout-padding layout-align="left start">
+  <md-card style="padding:0;margin-top:20px;" ng-show="!ac.loading && ac.usersList.length">
+    <md-table-container ng-init="ac.searchUsers()">
+      <table md-table>
+        <thead md-head>
+          <tr md-row>
+            <th md-column>User</th>
+            <th md-column>Status</th>
+          </tr>
+        </thead>
+        <tbody md-body>
+          <tr md-row ng-repeat="user in ac.usersList">
+            <td md-cell>{{user.ldap}}</td>
+            <td md-cell>
+        <md-switch ng-model="user.adminFlag" aria-label="Admin" ng-change="ac.changeStatus(ac.usersList, user)">
+        {{user.adminFlag == true ? 'Enabled' : 'Disabled'}}
+        </md-switch>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </md-table-container>    
+  </md-card>
+  <span style="margin-top:30px;" ng-show="!ac.loading && !ac.usersList.length" class="md-subhead">No records</span>  
+  <md-progress-circular ng-show="ac.loading" md-mode="indeterminate"></md-progress-circular>
+</md-content>

@@ -1,0 +1,8 @@
+<md-content flex layout="column" layout-align="start center">
+  <md-button class="md-raised md-primary btn" ng-click="lc.signIn()">Login with Google</md-button>
+  <md-toolbar ng-show="lc.notAuthorized" class="md-warn md-hue-2">
+    <h2 class="md-toolbar-tools">
+      <span style="text-align: center" flex>Email not authorized to use this app</span>
+    </h2>
+  </md-toolbar>
+</md-content>

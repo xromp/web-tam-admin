@@ -1,0 +1,24 @@
+<md-sidenav class="md-sidenav-left" md-component-id="sideNav" md-whiteframe="4" layout="column">
+  <md-toolbar md-whiteframe="4" class="main-toolbar">
+    <div class="md-toolbar-tools" layout="row">
+      <md-button class="md-icon-button md-raised avatar-container" aria-label="Me Options" ng-click="uc.toggleSideNav()">
+        <img ng-src="{{uc.firebaseUser.photoURL}}" class="avatar" alt="Me" />
+      </md-button>
+      <h1 flex>{{uc.firebaseUser.displayName}}</h1>
+    </div>
+  </md-toolbar>
+    <md-button ng-click="uc.gotoHome()" class="md-block md-primary navbuttons">Home</md-button>
+    <md-button ng-click="uc.gotoEmployee()" class="md-block md-primary navbuttons">Employee</md-button>
+    <md-button ng-click="uc.gotoFormsforApproval()" class="md-block md-primary navbuttons">Forms for Approval</md-button>
+  	<md-button ng-if="uc.admin.$value" ng-click="uc.gotoManageSlo()" class="md-block md-primary navbuttons">Manage SLO</md-button>
+  	<md-button ng-if="uc.admin.$value" ng-click="uc.gotoManageAdmin()" class="md-block md-primary navbuttons">Manage Admin</md-button>
+  	<md-button ng-click="uc.logout()" class="md-block md-warn navbuttons">Logout</md-button>
+  <div flex></div>
+  <div layout="row" layout-align="center start">
+    <md-switch ng-model="uc.debugLog" aria-label="Debug switch" class="md-warn" ng-change="uc.debugLogChanged()">
+      Enable debug logging
+    </md-switch>
+  </div>
+</md-sidenav>
+<div ui-view flex layout-fill layout="column">
+</div>

@@ -1,0 +1,14 @@
+<md-edit-dialog style="margin-left:190px;">
+   <div layout="column" class="md-content">
+       <form name="editDialog" layout="column" ng-submit="submit(model)" novalidate>
+           <md-input-container>
+ 	<label>UPDATE {{casePriority}} SLO</label>
+<input type="text" ng-model="model" ng-pattern="/^[0-9]{1,2}$/">
+</md-input-container>
+       </form>
+   </div>
+   <div layout="row" layout-align="end" class="md-actions">
+       <md-button class="md-warn" ng-click="dismiss()">CANCEL</md-button>
+       <md-button class="md-primary" ng-click="submit()">SAVE</md-button>
+   </div>
+</md-edit-dialog>

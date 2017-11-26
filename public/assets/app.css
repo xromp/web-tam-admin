@@ -1,0 +1,56 @@
+html, body {
+  font-family: 'Roboto', sans-serif;
+  height:100%;
+  margin: 0px;
+  padding: 0px;
+}
+
+.avatar-container{
+  padding:0 !important;
+}
+
+.avatar {
+  height: 100%;
+  width: 100%;
+}
+
+md-toolbar.main-toolbar{
+ min-height:64px !important;
+ max-height:64px
+}
+
+.score-green{
+  background-color:#2ea72e !important;
+}
+
+.score-amber{
+  background-color:#FFC200 !important;
+}
+
+.score-red{
+  background-color:#ec1111 !important;
+}
+
+.no-score{
+  background-color:#717070 !important;
+}
+
+table#cases-table .md-checkbox-column,
+table#cases-table .md-checkbox-cell {
+  display: none;
+}
+
+table#cases-table .md-sort-icon{
+  min-height: 18px;
+  min-width: 18px;
+  margin-left: 5px;
+}
+
+.navbuttons {
+	text-align: left;
+	margin-left: 25px;
+}
+
+.missedslo {
+	color: red !important;
+}

@@ -1,0 +1,51 @@
+<md-toolbar md-whiteframe="4" class="main-toolbar">
+  <div class="md-toolbar-tools" md-theme="toolbar-tools-purple">
+    <md-button class="md-icon-button" aria-label="Settings" ng-click="uc.toggleSideNav()">
+      <md-icon md-font-set="material-icons">menu</md-icon>
+    </md-button>
+    <span flex>PIPO</span>
+  </div>
+</md-toolbar>
+  
+  <md-content layout="row" layout-md layout-padding layout-align="left start">    
+    <md-card>
+        <md-button class="md-fab md-primary" aria-label="Use Android" ng-click="ec.showAddEntry()">
+            <md-icon><i class="material-icons">person_add</i></md-icon>
+        </md-button>
+      <md-table-container>
+        <table md-table>
+          <thead md-head md-order="orderCriteria">
+            <tr md-row>
+              <th md-column>No.</th>
+              <th md-column md-order-by="name">Name</th>
+              <th md-column md-order-by="role">Role</th>
+              <th md-column md-order-by="approver">Approver</th>              
+              <th md-column>Mobile No.</th>
+            </tr>
+          </thead>
+          <tbody md-body ng-if="ec.employeeList.length">
+            <!-- | paginate: hc.currentPage : hc.pageSize | orderBy: orderCriteria -->
+            <tr md-row ng-repeat="employee in ec.employeeList " ng-click="ec.showDetails(employee, $event)" href="#" md-select="caze">
+              <td md-cell ng-bind="$index+1"></td>
+              <td md-cell ng-bind="employee.name"></td>
+              <td md-cell ng-bind="employee.role"></td>
+              <td md-cell ng-bind="employee.approvername"></td>
+              <td md-cell ng-bind="employee.personalContactNo"></td>
+            </tr>
+          </tbody>
+          
+          <tbody md-body ng-if="!ec.employeeList.length">
+            <tr md-row>
+                <td md-cell colspan="5" style="text-align: center !important;">No Records</td>          
+            </tr>
+          </tbody> 
+            
+        </table>
+      </md-table-container>
+    
+      <md-table-pagination ng-if="hc.allcases.length" class="top" md-limit="hc.pageSize" md-limit-options="[5, 10, 30, 50]" md-page="hc.currentPage" md-total="{{hc.allcases.length}}"
+      md-page-select="true" md-boundary-links="true"></md-table-pagination>   	
+    
+  </md-card>
+</md-content>
+  
