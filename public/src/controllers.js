@@ -612,12 +612,35 @@
 
   });
 
-  controllers.controller('FormsForApprovalListCtrl', function($scope, $element, $filter, $state, $stateParams, $firebaseArray, $firebaseObject, $mdDialog, EmployeeSrvcs) {
+  controllers.controller('FormsForApprovalListCtrl', function($scope, $element, $filter, $state, $stateParams, $firebaseArray, $firebaseObject, $mdDialog, Auth,EmployeeSrvcs) {
     var self = this;
     var ref = firebase.database().ref();
     var formsRef = ref.child('formsforapproval');
+    var currentUid = firebase.auth().currentUser.uid;
 
     self.forms = [];
+
+    self.action = function(action, type){
+        if (type == 'APPROVED' || type == 'DECLINED') {
+            var data = {
+                status:type,
+                approvedby:currentUid
+            }
+
+
+            formsRef.child(action.uid).update(data)
+            .then(function(snapShots){
+                action.status = type;
+
+                $scope.$apply();
+            }).catch(function(error) {
+                alert("Something went wrong: " + error);
+            });
+
+        } else {
+            return;
+        }
+    };
 
     self.init = function(){
         self.approverList = [];
